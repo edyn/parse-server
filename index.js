@@ -48,8 +48,8 @@ var dashboard = new ParseDashboard({
   ],
   "users": [
     {
-      "user":"edyn",
-      "pass":"password"
+      "user": "admin",
+      "pass": process.env.DASHBOARD_ADMIN_PASS || 'something'
     },
   ],
   "useEncryptedPasswords": false,
