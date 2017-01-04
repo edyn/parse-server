@@ -52,7 +52,8 @@ var dashboard = new ParseDashboard({
       "pass":"password"
     },
   ],
-  "useEncryptedPasswords": false
+  "useEncryptedPasswords": false,
+  "trustProxy": 1
 }, allowInsecureHTTP);
 
 var app = express();
@@ -65,7 +66,7 @@ var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
 // make the Parse Dashboard available at /dashboard
-app.use('/dashboard', dashboard);
+app.use('/parse-dashboard', dashboard);
 
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) {
