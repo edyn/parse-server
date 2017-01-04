@@ -72,6 +72,10 @@ app.get('/', function(req, res) {
   res.status(200).send('I dream of being a website.  Please star the parse-server repo on GitHub!');
 });
 
+app.get('/_health', function(req, res) {
+  res.status(200).send('Ok');
+});
+
 // There will be a test page available on the /test path of your server url
 // Remove this before launching your app
 app.get('/test', function(req, res) {
