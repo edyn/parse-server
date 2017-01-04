@@ -1,0 +1,24 @@
+env:
+  NODE_ENV: test
+
+steps:
+  # - command: docker run --rm -v "$PWD":/app -w /app edyn/node:4-dev npm install
+  #   name: npm install
+  #   timeout_in_minutes: 2
+  #
+  # # Since running npm install is needed by both previous step,
+  # # wait until it is complete so that we can run the two steps in parallel
+  # - wait
+
+  - command: ./scripts/build-docker.sh
+    name: build docker image
+    timeout_in_minutes: 4
+    agents:
+      role: 'deployer'
+
+  - wait
+
+  - command: ./scripts/deliver.sh
+    name: "Deliver image"
+    agents:
+      role: 'deployer'
