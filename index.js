@@ -44,7 +44,7 @@ var dashboard = new ParseDashboard({
       "appId": process.env.APP_ID || 'myAppId',
       "masterKey": process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
       "appName": "Edyn App",
-      "production": process.env.NODE_ENV === 'production,
+      "production": process.env.NODE_ENV === 'production',
     }
   ],
   "users": [
