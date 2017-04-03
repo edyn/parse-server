@@ -28,7 +28,7 @@ var api = new ParseServer({
       apiKey: process.env.GCM_API_KEY,
     },
     ios: {
-      pfx: path.join(__dirname, 'prod.p12'),
+      pfx: path.join(__dirname, 'prod.pem'),
       bundleId: process.env.IOS_BUNDLE_ID,
       production: true
     }
